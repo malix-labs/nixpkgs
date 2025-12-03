@@ -16,7 +16,7 @@ buildNpmPackage rec {
     hash = "sha256-HjgAad0xj0J0KstB8SrmvMnOEADOnzqDQRKvXl1TVAo=";
   };
 
-  npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+  npmDepsHash = lib.fakeHash;
 
   # Skip lint as it's not needed for packaging and may require git
   npmBuildScript = "build";
