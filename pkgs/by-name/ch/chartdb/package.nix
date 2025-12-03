@@ -13,10 +13,10 @@ buildNpmPackage rec {
     owner = "chartdb";
     repo = "chartdb";
     tag = "v${version}";
-    hash = "sha256-oShLe2Q3fBKM3bnHDXJTkNJR6q/WvZexPqxHQ6/sxqQ=";
+    hash = "sha256-HjgAad0xj0J0KstB8SrmvMnOEADOnzqDQRKvXl1TVAo=";
   };
 
-  npmDepsHash = "sha256-AJRv/2aGmY7tA0ixrSmzx8NiA67rmq/U9CaAZR8kwV8=";
+  npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
 
   # Skip lint as it's not needed for packaging and may require git
   npmBuildScript = "build";
