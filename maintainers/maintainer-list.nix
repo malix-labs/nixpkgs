@@ -10,9 +10,9 @@
      # Optional
      email = "address@example.org";
      matrix = "@user:example.org";
-     keys = [{
-       fingerprint = "AAAA BBBB CCCC DDDD EEEE  FFFF 0000 1111 2222 3333";
-     }];
+     keys = mkKeys [
+       "AAAA BBBB CCCC DDDD EEEE  FFFF 0000 1111 2222 3333"
+     ];
    };
    ```
 
@@ -62,6 +62,10 @@
    documented at [CONTRIBUTING.md](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#commit-conventions)
    file located in the root of the Nixpkgs repo.
 */
+let
+  mkKey = fingerprint: { inherit fingerprint; };
+  mkKeys = map mkKey;
+in
 {
   # keep-sorted start case=no numeric=no block=yes
 
@@ -15951,9 +15955,9 @@
     github = "Malix-Labs";
     githubId = 76160668;
     email = "alixbrunetcontact+nixpkgs@gmail.com";
-    keys = [
-      { fingerprint = "cgtiI0dV+OGTuIFFuuCPWZPgF5OaiSkmZzobIdoWQO0"; } # SSH
-      { fingerprint = "369E2AB995539B6F30AAC24C600394C79ED874E5"; } # OpenPGP
+    keys = mkKeys [
+      "cgtiI0dV+OGTuIFFuuCPWZPgF5OaiSkmZzobIdoWQO0" # SSH
+      "369E2AB995539B6F30AAC24C600394C79ED874E5" # OpenPGP
     ];
   };
   malo = {
