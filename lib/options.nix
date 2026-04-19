@@ -185,9 +185,12 @@ rec {
   */
   mkEnableOption =
     name:
-    mkOption {
+    let
       default = false;
-      example = true;
+    in
+    mkOption {
+      inherit default;
+      example = !default;
       description = "Whether to enable ${name}.";
       type = lib.types.bool;
     };
