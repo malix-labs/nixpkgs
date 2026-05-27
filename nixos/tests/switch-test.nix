@@ -70,6 +70,7 @@ in
 
         # Test that no boot loader still switches, e.g. in the ISO
         boot.loader.grub.enable = false;
+        boot.loader.systemd-boot.enable = false;
 
         specialisation = rec {
           brokenInitInterface.configuration.config.system.systemBuilderCommands = ''
@@ -768,6 +769,7 @@ in
         [ "$action" == "check" ] || [ "$action" == "test" ]
       '';
       boot.loader.grub.enable = false;
+      boot.loader.systemd-boot.enable = false;
       specialisation.failingCheck.configuration.system.preSwitchChecks.failEveryTime = ''
         echo this will fail
         false
